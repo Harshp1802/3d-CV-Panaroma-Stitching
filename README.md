@@ -17,7 +17,7 @@ Take atleast 4 color images per scene in the dataset and perform the following s
 
 ### Example Feature Matching:
 
-<img src=".\example_matches.png" width = "50%" height ="50%" >
+<img src=".\example_matching.png" width = "50%" height ="50%" >
 
 3. Using RANSAC (RANdom SAmple Consensus) Algorithm that best fits the Feature matchings of two images
 4. Homography Matrix Calculation using the Best Point Correspondences
