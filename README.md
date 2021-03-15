@@ -12,7 +12,7 @@ Take atleast 4 color images per scene in the dataset and perform the following s
 # Approach Used
 
 1. Detect and extract key features from a given image
-	- SIFT Algorithm
+	- **SIFT Algorithm**
 2. Feature Matching [Simple Brute Force Method]
 
 ### Example Feature Matching:
@@ -27,11 +27,11 @@ Take atleast 4 color images per scene in the dataset and perform the following s
 ## Stitching done for 4 images in all the Datasets
 
 + Notes:
-	- I4 --> Left-most Image | I1 --> Right-most Image
-	- The Second Image in all the datasets has been used as the Base Reference image for stitching, i.e, I3
-	- H_34 --> Homography matrix of I3 w.r.t I4 [Needs to be inversed before finding the Warp as I4 warp is to be found w.r.t I3
-	- H_23 --> Homography matrix of I2 w.r.t I3 
-	- H_12 --> Homography matrix of I1 w.r.t I2
+	- **I4** --> Left-most Image | I1 --> Right-most Image
+	- The Second Image in all the datasets has been used as the Base Reference image for stitching, i.e, **I3**
+	- **H_34** --> Homography matrix of I3 w.r.t I4 [Needs to be inversed before finding the Warp as I4 warp is to be found w.r.t I3
+	- **H_23** --> Homography matrix of I2 w.r.t I3 
+	- **H_12** --> Homography matrix of I1 w.r.t I2
 		- Here we calculate H_13 for stitching the right most image by using:
 		- ```H_12 = H_12.dot(H_23) ```
 	- Warping is done by finding the above matrices (**H**) and then transforming every image w.r.t I3
@@ -46,23 +46,23 @@ Take atleast 4 color images per scene in the dataset and perform the following s
 ### Use the Jupyter Notebook for the code
 
 - Required Inputs:
-	- Image Dataset Number --> (int) from 1 to 6
-	- In_built --> (Bool) True or False
+	- **Image Dataset Number** --> (**int**) from 1 to 6
+	- **In_built** --> (**Bool**) True or False
 		- True, if want to use the in-bulit Homography Estimation
 - Tunable Parameters:
-	- No. of Iterations to run the RANSAC : *default --> **800*** 
+	- **No. of Iterations to run the RANSAC : *default --> 800***
 		- [For Dataset-3, this value has to be increased to 4000. More details mentioned in its individual README file]
-	- L1 Threshold for no. of inliers calculation : *default --> **5***
-	- No. of Iterations to run the RANSAC : *default --> **4000***
+	- **L1 Threshold for no. of inliers calculation : *default --> 5***
+	- **No. of Iterations to run the RANSAC : *default --> 4000***
 - The code automatically saves the following files in the following directory: 
 ``` .\results\I{Image Dataset Number} ```
 
 - Stitched Images (Without the use of in-built functions):	
-	+ Panaraoma_1_2_3_4.jpg [Final Output: 4 images stitched together]
+	+ **Panaraoma_1_2_3_4.jpg** [Final Output: 4 images stitched together]
 	+ stitch_1_2.jpg [Stitching of 2 images]
 	+ stitch_1_2_3.jpg [Stitching of 2 images]
 - Stitched Images (Using in-built Homography Estimation):	
-	+ Panaraoma_in_built_1_2_3_4.jpg [Final Output: 4 images stitched together]
+	+ **Panaraoma_in_built_1_2_3_4.jpg** [Final Output: 4 images stitched together]
 	+ stitch_in_built_1_2.jpg [Stitching of 2 images]
 	+ stitch_in_built_1_2_3.jpg [Stitching of 2 images]
 
