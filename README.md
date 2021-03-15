@@ -21,6 +21,7 @@ Take atleast 4 color images per scene in the dataset and perform the following s
 
 3. Using RANSAC (RANdom SAmple Consensus) Algorithm that best fits the Feature matchings of two images
 4. Homography Matrix Calculation using the Best Point Correspondences
+5. Warping & Blending
 
 - Note: Each step is described with the code.
 
@@ -35,10 +36,12 @@ Take atleast 4 color images per scene in the dataset and perform the following s
 		- Here we calculate H_13 for stitching the right most image by using:
 		- ```H_12 = H_12.dot(H_23) ```
 	- Warping is done by finding the above matrices (**H**) and then transforming every image w.r.t I3
-	- Inverse Warping method sued to avoid creation of holes in the Output Image
-	- For Blending, I have used the Laplacian Pyramids method discussed in class. I have decribed its implementation in the code itself. Few references used for this are:
+	- Inverse Warping method used to avoid creation of holes in the Output Image
+	- For Blending, I have used the Laplacian Pyramids method discussed in class. I have decribed its implementation in the code itself. 
+	- Few references used are:
 		-	[http://pages.cs.wisc.edu/~csverma/CS766_09/ImageMosaic/imagemosaic.html](http://pages.cs.wisc.edu/~csverma/CS766_09/ImageMosaic/imagemosaic.html)
 		-   Multi-Band Blending from **Brown, Matthew, and David G. Lowe. ”Automatic panoramic image stitching using invariant features.” International journal of computer vision 74.1 (2007): 59-73.**
+		- https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_feature2d/py_feature_homography/py_feature_homography.html
 		- https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_imgproc/py_pyramids/py_pyramids.html
 - For Q4, the in-built Homography estimation is done using the Cv2 library.
 
