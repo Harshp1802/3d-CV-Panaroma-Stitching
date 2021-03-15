@@ -1,7 +1,11 @@
 # EE 645 {3D-Computer Vision}
 # Assignment 1: Panorama Stitching
 
-### Task:
+GitHub Repo: (https://github.com/Harshp1802/3d-CV-Panaroma-Stitching)
+- Name: **Harsh Patel**
+- Roll No: **18110062**
+
+### Tasks:
 Take atleast 4 color images per scene in the dataset and perform the following steps. 
 1. Detect, extract, and match features (inbuilt functions allowed).
 2. Estimate homography matrix between two images using RANSAC (inbuilt functions are allowed except those functions which directly estimate the homograpy).
@@ -22,6 +26,7 @@ Take atleast 4 color images per scene in the dataset and perform the following s
 3. Using RANSAC (RANdom SAmple Consensus) Algorithm that best fits the Feature matchings of two images
 4. Homography Matrix Calculation using the Best Point Correspondences
 5. Warping & Blending
+	- Pyramid Method for Blending
 
 - Note: Each step is described with the code.
 
@@ -34,15 +39,15 @@ Take atleast 4 color images per scene in the dataset and perform the following s
 	- **H_23** --> Homography matrix of I2 w.r.t I3 
 	- **H_12** --> Homography matrix of I1 w.r.t I2
 		- Here we calculate H_13 for stitching the right most image by using:
-		- ```H_12 = H_12.dot(H_23) ```
+		- ```H_13 = H_12.dot(H_23) ```
 	- Warping is done by finding the above matrices (**H**) and then transforming every image w.r.t I3
 	- Inverse Warping method used to avoid creation of holes in the Output Image
 	- For Blending, I have used the Laplacian Pyramids method discussed in class. I have decribed its implementation in the code itself. 
 	- Few references used are:
 		-	[http://pages.cs.wisc.edu/~csverma/CS766_09/ImageMosaic/imagemosaic.html](http://pages.cs.wisc.edu/~csverma/CS766_09/ImageMosaic/imagemosaic.html)
 		-   Multi-Band Blending from **Brown, Matthew, and David G. Lowe. ”Automatic panoramic image stitching using invariant features.” International journal of computer vision 74.1 (2007): 59-73.**
-		- https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_feature2d/py_feature_homography/py_feature_homography.html
-		- https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_imgproc/py_pyramids/py_pyramids.html
+		- [https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_feature2d/py_feature_homography/py_feature_homography.html]
+		- [https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_imgproc/py_pyramids/py_pyramids.html]
 - For Q4, the in-built Homography estimation is done using the Cv2 library.
 
 ## How to run the Code:
@@ -69,6 +74,29 @@ Take atleast 4 color images per scene in the dataset and perform the following s
 	+ stitch_in_built_1_2.jpg [Stitching of 2 images]
 	+ stitch_in_built_1_2_3.jpg [Stitching of 2 images]
 
-# Results for each Dataset in individual .md files
+# Results for each Dataset:
+
+- Individual .md files [Images in these files are automatically updated on running the code]
+	- 
+	```
+		│   results_I1.md
+		│   results_I2.md
+		│   results_I3.md
+		│   results_I4.md
+		│   results_I5.md
+		│   results_I6.md
+	```
+- Individual pdf reports (".\results_report_pdf\")
+	- 
+	```
+	└───results_report_pdf
+			results_I1.pdf
+			results_I2.pdf
+			results_I3.pdf
+			results_I4.pdf
+			results_I5.pdf
+			results_I6.pdf
+	```
 
 
+	* Please ignore the emoji in the pdf files. [Generated due to the conversion from .md to .pdf]

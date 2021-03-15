@@ -27,4 +27,4 @@
 
 + Final Stitching of 4 Images:
 
-        + <img src=".\results\I5\Panorama_in_built_1_2_3_4.jpg" width="40%" height="40%">
+    + <img src=".\results\I5\Panorama_in_built_1_2_3_4.jpg" width="40%" height="40%">
